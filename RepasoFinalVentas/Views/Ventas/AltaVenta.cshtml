@@ -1,0 +1,73 @@
+﻿
+@model RepasoFinalVentas.Models.Ventas
+@{
+    ViewBag.Title = "Alta de nuevas ventas";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+    List<SelectListItem> itemm = (List<SelectListItem>)ViewBag.itemm;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>VENTAS:</h4>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">
+                        Nombre del cliente:
+                    </label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.pNombreCliente, htmlAttributes: new { @class = "form-control", @id = "txtNombreCliente" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">
+                        Importe:
+                    </label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.pImporte, htmlAttributes: new { @class = "form-control", @id = "txtApellidoPersona" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">
+                        Forma de Pago:
+                    </label>
+                    <div class="col-sm-6">
+                        @Html.DropDownList("idFormaPago", items, "Seleccione forma de pago", htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">
+                        Plan de cuotas:
+                    </label>
+                    <div class="col-sm-6">
+                        @Html.DropDownList("idPlanesCuotas", itemm, "Seleccione plan de pago", htmlAttributes: new { @class = "form-control" })
+
+                    </div>
+                </div>
+
+                <div class="form-group text-rigth">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" type="submit">
+                            Guardar venta
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

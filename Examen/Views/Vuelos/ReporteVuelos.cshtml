@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "ReporteVuelos";
+}
+
+<h2>Reporte de los vuelos cargados</h2>
+
+<div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <h4>Cantidad de vuelos cargados en el sistema</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Cantidad de vuelos para cada tipo de carga ordenados de forma descendente</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-responsive table-striped">
+
+            <thead class="text-center">
+
+            <th>
+                id
+            </th>
+            <th>
+                observacion
+            </th>
+            <th>
+                idDestino
+            </th>
+            <th>
+                idTipoCarga
+            </th>
+            <th>
+                fecha
+            </th>
+            <th>
+                tipo
+            </th>
+
+
+            </thead>
+            <tbody>
+                @foreach (var Vuelo in Model)
+                {
+                <tr class="text-center">
+
+                    @*<td>
+                        @Vuelo.pIdVuelo
+                    </td>
+                    <td>
+                        @Vuelo.pobservaciones
+                    </td>
+                    <td>
+                        @Vuelo.pidDestino
+                    </td>
+                    <td>
+                        @Vuelo.pidTipoCarga
+                    </td>
+                    <td>
+                        @Vuelo.pfecha
+                    </td>
+                    <td>
+                        @Vuelo.ptipo
+                    </td>*@
+                    @*<td>
+                        @PARAMETRO TIENE QUE TENER EL MISMO NOMBRE DEL PARAMETRO DE LA VISTA
+                        <a href="@Url.Action("UpdatePersona","Persona",new {@idPersona= Vuelo.id })" class="btn btn-warning">
+                            Mostrar
+                        </a>
+                        <a href="@Url.Action("EliminarPersona","Persona",new {@idPersona= Vuelo.id })" class="btn btn-danger">
+                            Eliminar
+                        </a>
+                    </td>*@
+                </tr>
+                }
+            </tbody>
+
+
+
+
+        </table>
+    </div>
+</div>
